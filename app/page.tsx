@@ -7,6 +7,7 @@ import "./../app/app.css";
 import { Amplify } from "aws-amplify";
 import outputs from "@/amplify_outputs.json";
 import "@aws-amplify/ui-react/styles.css";
+import Link from "next/link";
 
 Amplify.configure(outputs);
 
@@ -46,6 +47,18 @@ export default function App() {
         <a href="https://docs.amplify.aws/nextjs/start/quickstart/nextjs-app-router-client-components/">
           Review next steps of this tutorial.
         </a>
+      </div>
+      <div style={{ marginTop: "20px" }}>
+        <Link href="/career-compass">
+          <button style={{ 
+            background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+            border: "none",
+            fontSize: "1.1em",
+            padding: "15px 30px"
+          }}>
+            🌟 Try Career Compass
+          </button>
+        </Link>
       </div>
     </main>
   );

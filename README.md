@@ -1,25 +1,121 @@
-## AWS Amplify Next.js (App Router) Starter Template
+# Career Compass - Quick Start
 
-This repository provides a starter template for creating applications using Next.js (App Router) and AWS Amplify, emphasizing easy setup for authentication, API, and database capabilities.
+## 📦 What You Got
 
-## Overview
+I've integrated Career Compass into your AWS Amplify Next.js project!
 
-This template equips you with a foundational Next.js application integrated with AWS Amplify, streamlined for scalability and performance. It is ideal for developers looking to jumpstart their project with pre-configured AWS services like Cognito, AppSync, and DynamoDB.
+## 📂 Folder Structure
 
-## Features
+```
+your-project/
+├── app/
+│   ├── career-compass/          ← NEW FOLDER
+│   │   ├── page.tsx            ← Career Compass component
+│   │   └── career-compass.css  ← Styles
+│   ├── page.tsx                ← UPDATE THIS (add link to Career Compass)
+│   └── ...
+├── amplify/
+│   ├── data/
+│   │   └── resource.ts         ← OPTIONAL: Update for database
+│   └── ...
+└── ...
+```
 
-- **Authentication**: Setup with Amazon Cognito for secure user authentication.
-- **API**: Ready-to-use GraphQL endpoint with AWS AppSync.
-- **Database**: Real-time database powered by Amazon DynamoDB.
+## ✅ Changes Needed in Your Repo
 
-## Deploying to AWS
+### 1. CREATE NEW FOLDER
+```bash
+mkdir app/career-compass
+```
 
-For detailed instructions on deploying your application, refer to the [deployment section](https://docs.amplify.aws/nextjs/start/quickstart/nextjs-app-router-client-components/#deploy-a-fullstack-app-to-aws) of our documentation.
+### 2. ADD TWO FILES TO NEW FOLDER
 
-## Security
+**File: `app/career-compass/page.tsx`**
+- Copy from: `outputs/app/career-compass/page.tsx` ✓
 
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+**File: `app/career-compass/career-compass.css`**
+- Copy from: `outputs/app/career-compass/career-compass.css` ✓
 
-## License
+### 3. UPDATE HOME PAGE
 
-This library is licensed under the MIT-0 License. See the LICENSE file.
+**File: `app/page.tsx`**
+- Replace with: `outputs/updated-page.tsx` ✓
+- This adds a "Try Career Compass" button to your home page
+
+### 4. TEST IT!
+
+```bash
+npm run dev
+```
+
+Then visit: `http://localhost:3000/career-compass`
+
+## 🎉 That's It for Basic Setup!
+
+Career Compass is now integrated and ready to use!
+
+---
+
+## 🚀 Optional: Add Database Integration
+
+If you want to save user responses to DynamoDB:
+
+### 5. UPDATE DATA SCHEMA (Optional)
+
+**File: `amplify/data/resource.ts`**
+- Replace with: `outputs/updated-data-resource.ts` ✓
+
+### 6. USE ENHANCED COMPONENT (Optional)
+
+**File: `app/career-compass/page.tsx`**
+- Replace with: `outputs/career-compass-with-db.tsx` ✓
+
+### 7. UNCOMMENT DATABASE CODE (Optional)
+
+In `app/career-compass/page.tsx`, find and uncomment this section (around line 220):
+
+```typescript
+try {
+  await client.models.CareerResponse.create({
+    // ... database save code
+  });
+} catch (error) {
+  console.error("Error saving response:", error);
+}
+```
+
+### 8. DEPLOY BACKEND (Optional)
+
+```bash
+npx ampx sandbox
+```
+
+---
+
+## 🎨 Key Features
+
+✅ Conversational interface (like talking to a supportive parent)
+✅ 9 thoughtful questions about career preferences
+✅ Smart company matching based on answers
+✅ Beautiful, mobile-responsive design
+✅ Smooth animations and typing indicators
+✅ Ready for 20-30 year olds exploring career options
+
+## 🔧 Customize It
+
+- **Add companies**: Edit `companies` array in `page.tsx`
+- **Change questions**: Edit `questions` array in `page.tsx`  
+- **Update colors**: Modify `career-compass.css`
+
+## 📚 Full Documentation
+
+See `INTEGRATION_GUIDE.md` for:
+- Detailed setup instructions
+- Advanced features
+- Customization guide
+- Troubleshooting
+- Deployment tips
+
+## 🤝 Need Help?
+
+All the files are in the `outputs` folder ready to copy into your project!
